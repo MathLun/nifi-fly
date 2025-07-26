@@ -1,0 +1,4 @@
+app="nifi-fly"
+primary_region="iad" # Region: Virginia
+source="nifi_data"
+destination="/opt/nifi/nifi-current"
