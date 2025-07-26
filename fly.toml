@@ -1,4 +1,16 @@
 app="nifi-fly"
 primary_region="iad" # Region: Virginia
-source="nifi_data"
-destination="/opt/nifi/nifi-current"
+
+[mounts]
+  source="nifi_data"
+  destination="/opt/nifi/nifi-current"
+ 
+[[services]]
+  internal_port=8080
+  protocol="tcp"
+  [[services.ports]]
+    handles=["http"]
+    port=80
+  [[services.ports]]
+    handles=["tls","http"]
+    port=443
