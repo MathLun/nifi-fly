@@ -4,7 +4,11 @@ primary_region="iad" # Region: Virginia
 [mounts]
   source="nifi_data"
   destination="/opt/nifi/nifi-current"
- 
+
+[env]
+  NIFI_WEB_HTTP_PORT="8080"
+  NIFI_WEB_HTTP_HOST="0.0.0.0"
+
 [[services]]
   internal_port=8080
   protocol="tcp"
