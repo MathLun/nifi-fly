@@ -1,9 +1,8 @@
 app="nifi-fly"
-primary_region="iad" # Region: Virginia
+primary_region="gru" # Region: Mais proximas do Brasil
 
-[mounts]
-  source="nifi_data"
-  destination="/opt/nifi/nifi-current"
+[build]
+  dockefile="Dockerfile"
 
 [env]
   NIFI_WEB_HTTP_PORT="8080"
@@ -18,3 +17,7 @@ primary_region="iad" # Region: Virginia
   [[services.ports]]
     handles=["tls","http"]
     port=443
+  [[services.tcp_checks]]
+    interval="30s"
+    timeout="5s"
+    grace_period="30s"
